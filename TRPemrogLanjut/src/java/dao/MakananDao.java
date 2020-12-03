@@ -37,6 +37,7 @@ public class MakananDao {
                 listMakanan = new ArrayList<>();
                 while (rs.next()) {
                     makanan dataMakanan = new makanan();
+                    dataMakanan.setId(rs.getInt("id"));
                     dataMakanan.setNama(rs.getString("nama"));
                     dataMakanan.setStok(rs.getInt("stok"));
                     dataMakanan.setSupplier(rs.getString("supplier"));
@@ -49,6 +50,30 @@ public class MakananDao {
                 Logger.getLogger(MakananDao.class.getName()).log(Level.SEVERE, null, ex);
             }
             return listMakanan;
+        }
+
+    }
+    
+    
+    public boolean delete(String id) {
+        if (kon.getConn() == null) {
+            return false;
+        } else {
+            Statement stmt = null;
+            try {
+                stmt = kon.getConn().createStatement();
+                int terhapus = stmt.executeUpdate("DELETE FROM makanan WHERE id = '" + id + "'");
+                stmt.close();
+                kon.getConn().close();
+                if (terhapus > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } catch (Exception e) {
+                return false;
+            }
         }
 
     }
