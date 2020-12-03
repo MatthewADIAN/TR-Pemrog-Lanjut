@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2020 at 08:50 AM
+-- Generation Time: Dec 03, 2020 at 09:08 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `histori_order` (
   `id` int(11) NOT NULL,
-  `tanggal` date NOT NULL,
+  `vendor` varchar(50) NOT NULL,
   `nama_makanan` varchar(100) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -46,6 +46,14 @@ CREATE TABLE `makanan` (
   `stok` int(11) NOT NULL,
   `supplier` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `makanan`
+--
+
+INSERT INTO `makanan` (`id`, `nama`, `stok`, `supplier`) VALUES
+(1, 'Cheetos', 5, 'Margomurah'),
+(2, 'Brownies', 1, 'Suruh');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +85,7 @@ ALTER TABLE `histori_order`
 -- AUTO_INCREMENT for table `makanan`
 --
 ALTER TABLE `makanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
