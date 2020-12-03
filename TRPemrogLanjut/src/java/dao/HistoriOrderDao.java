@@ -49,4 +49,8 @@ public class HistoriOrderDao {
             return listorder;
         }
     }
+
+    public boolean delete(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

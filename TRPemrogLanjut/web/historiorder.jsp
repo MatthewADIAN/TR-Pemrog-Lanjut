@@ -4,9 +4,9 @@
     Author     : USER
 --%>
 
-<%@page import="dao.MakananDao"%>
+<%@page import="dao.HistoriOrderDao"%>
 <%@page import="java.util.List"%>
-<%@page import="model.makanan"%>
+<%@page import="model.histori_order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,23 +19,23 @@
         <table border="1" cellspacing="0">
             <tr>
                 <th>Id</th>
-                <th>Nama</th>
-                <th>Stok</th>
-                <th>Supplier</th>
+                <th>Vendor</th>
+                <th>Nama Makanan</th>
+                <th>Jumlah</th>
                 <th>Action</th>
             </tr>
             <%
-                List<makanan> listMakanan = new MakananDao().getAll();
-                for (int i = 0; i < listMakanan.size(); i++) {
+                List<histori_order> listHistori = new HistoriOrderDao().getAll();
+                for (int i = 0; i < listHistori.size(); i++) {
             %>
             <tr>
-                <td><%= listMakanan.get(i).getId()%></td>
-                <td><%= listMakanan.get(i).getNama()%></td>
-                <td><%= listMakanan.get(i).getStok()%></td>
-                <td><%= listMakanan.get(i).getSupplier()%></td>
+                <td><%= listHistori.get(i).getId()%></td>
+                <td><%= listHistori.get(i).getVendor()%></td>
+                <td><%= listHistori.get(i).getNama_makanan()%></td>
+                <td><%= listHistori.get(i).getJumlah()%></td>
                 <td>
-                    <a href="hapusmakanan?id=<%= listMakanan.get(i).getId()%>">Hapus</a>
-                    <a href="editmakanan?id=<%= listMakanan.get(i).getId()%>">Edit</a>
+                    <a href="hapushistori?id=<%= listHistori.get(i).getId()%>">Hapus</a>
+                    <a href="edithistori?id=<%= listHistori.get(i).getId()%>">Edit</a>
                 </td>
             </tr>
             <%}%>
