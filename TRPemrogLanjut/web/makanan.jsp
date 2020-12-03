@@ -33,7 +33,10 @@
                 <td><%= listMakanan.get(i).getNama()%></td>
                 <td><%= listMakanan.get(i).getStok()%></td>
                 <td><%= listMakanan.get(i).getSupplier()%></td>
-                <td><a href="hapusmakanan?id=<%= listMakanan.get(i).getId()%>">Hapus</a></td>
+                <td>
+                    <a href="hapusmakanan?id=<%= listMakanan.get(i).getId()%>">Hapus</a>
+                    <a href="editmakanan?id=<%= listMakanan.get(i).getId()%>">Edit</a>
+                </td>
             </tr>
             <%}%>
 
