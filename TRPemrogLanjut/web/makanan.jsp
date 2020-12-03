@@ -18,18 +18,22 @@
         <h1>Data Gudang Makanan</h1>
         <table border="1" cellspacing="0">
             <tr>
+                <th>Id</th>
                 <th>Nama</th>
                 <th>Stok</th>
                 <th>Supplier</th>
+                <th>Action</th>
             </tr>
             <%
                 List<makanan> listMakanan = new MakananDao().getAll();
                 for (int i = 0; i < listMakanan.size(); i++) {
             %>
             <tr>
+                <td><%= listMakanan.get(i).getId()%></td>
                 <td><%= listMakanan.get(i).getNama()%></td>
                 <td><%= listMakanan.get(i).getStok()%></td>
                 <td><%= listMakanan.get(i).getSupplier()%></td>
+                <td><a href="hapusmakanan?id=<%= listMakanan.get(i).getId()%>">Hapus</a></td>
             </tr>
             <%}%>
 
