@@ -51,7 +51,24 @@ public class HistoriOrderDao {
         }
     }
 
-    public boolean delete(String parameter) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean delete(String id) {
+        if(kon.getConn()== null){
+            return false;
+        }else{
+            Statement stmt = null;
+            try {
+                stmt = kon.getConn().createStatement();
+                int terhapus = stmt.executeUpdate("DELETE FROM histori_order WHERE id = '" + id + "'");
+                stmt.close();
+                kon.getConn().close();
+                if (terhapus > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (Exception e) {
+                return false;
+            }
+        }
     }
 }
