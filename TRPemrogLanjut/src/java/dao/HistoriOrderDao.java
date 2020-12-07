@@ -35,6 +35,7 @@ public class HistoriOrderDao {
                 listorder = new ArrayList<>();
                 while (rs.next()){
                   histori_order dataOrder = new histori_order();
+                  dataOrder.setId(rs.getInt("id"));
                   dataOrder.setVendor(rs.getString("vendor"));
                   dataOrder.setNama_makanan(rs.getString("nama_makanan"));
                   dataOrder.setJumlah(rs.getInt("jumlah"));
