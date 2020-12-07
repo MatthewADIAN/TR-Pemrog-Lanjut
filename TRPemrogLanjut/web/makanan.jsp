@@ -48,50 +48,105 @@
             </tr>
             <%}%>
         </table>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Tambahkan Data 
-        </button>
 
-        <!-- Modal -->
-        <form method="POST" action="tambahmakanan">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Masukan barang</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Tambahkan Data 
+                    </button>
+
+                    <!-- Modal -->
+                    <form method="POST" action="tambahmakanan">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Masukan barang</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table>
+                                            <tr>
+                                                <td>ID</td>
+                                                <td><input type="text" name="id"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama</td>
+                                                <td><input type="text" name="nama"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stok</td>
+                                                <td><input type="text" name="stok"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Supplier</td>
+                                                <td><input type="text" name="supplier"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <table>
-                                <tr>
-                                    <td>ID</td>
-                                    <td><input type="text" name="id"></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama</td>
-                                    <td><input type="text" name="nama"></td>
-                                </tr>
-                                <tr>
-                                    <td>Stok</td>
-                                    <td><input type="text" name="stok"></td>
-                                </tr>
-                                <tr>
-                                    <td>Supplier</td>
-                                    <td><input type="text" name="supplier"></td>
-                                </tr>
-                            </table>
+                    </form>
+                </div>
+                
+                <div class="col-sm-6">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#editModal">
+                        Edit data
+                    </button>
+
+                    <!-- Modal -->
+                    <form method="POST" action="editmakanan">
+                        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Masukan barang</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table>
+                                            <tr>
+                                                <td>ID</td>
+                                                <td><input type="text" name="id"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama</td>
+                                                <td><input type="text" name="nama"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stok</td>
+                                                <td><input type="text" name="stok"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Supplier</td>
+                                                <td><input type="text" name="supplier"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
+
     </div>
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

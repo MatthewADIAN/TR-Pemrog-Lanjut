@@ -96,7 +96,7 @@ public class MakananDao {
         }
     }
 
-    public boolean edit(String id, makanan makananBaru) {
+    public boolean edit(makanan makananBaru) {
         if (kon.getConn() == null) {
             return false;
         } else {
@@ -106,7 +106,7 @@ public class MakananDao {
                 int terubah = stmt.executeUpdate("UPDATE makanan SET nama = '"
                         + makananBaru.getNama() + "', stok =  '"
                         + makananBaru.getStok() + "', supplier =  '"
-                        + makananBaru.getSupplier() + "' WHERE id = '" + id + "'");
+                        + makananBaru.getSupplier() + "' WHERE id = '" + makananBaru.getId() + "'");
                 stmt.close();
                 kon.getConn().close();
                 if (terubah > 0) {

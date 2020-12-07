@@ -19,8 +19,8 @@ import model.makanan;
  *
  * @author hats
  */
-@WebServlet(name = "tambahmakanan", urlPatterns = {"/tambahmakanan"})
-public class tambahmakanan extends HttpServlet {
+@WebServlet(name = "editmakanan", urlPatterns = {"/editmakanan"})
+public class editmakanan extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,18 +34,18 @@ public class tambahmakanan extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         makanan makan = new makanan();
         makan.setId(Integer.parseInt(request.getParameter("id")));
         makan.setNama(request.getParameter("nama"));
         makan.setStok(Integer.parseInt(request.getParameter("stok")));
         makan.setSupplier(request.getParameter("supplier"));
-        
+
         try (PrintWriter out = response.getWriter()) {
             if (request.getParameter("id") == null) {
                 out.println("gagal");
             } else {
-                if (new MakananDao().insert(makan)) {
+                if (new MakananDao().edit(makan)) {
                     out.println("sukses");
                 } else {
                     out.println("gagal");
@@ -53,6 +53,7 @@ public class tambahmakanan extends HttpServlet {
                 out.println("<br><a href='makanan.jsp'>Ketuk untuk kembali</a>");
             }
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
