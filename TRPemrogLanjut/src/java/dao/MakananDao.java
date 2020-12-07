@@ -5,7 +5,6 @@
  */
 package dao;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,8 +15,8 @@ import java.util.logging.Logger;
 import model.makanan;
 import util.Koneksi;
 
-
 public class MakananDao {
+
     Koneksi kon = new Koneksi();
 
     public List<makanan> getAll() {
@@ -50,8 +49,7 @@ public class MakananDao {
         }
 
     }
-    
-    
+
     public boolean delete(String id) {
         if (kon.getConn() == null) {
             return false;
@@ -74,22 +72,22 @@ public class MakananDao {
         }
 
     }
-    
-    public boolean insert(makanan makananBaru){
-        if(kon.getConn() == null){
+
+    public boolean insert(makanan makananBaru) {
+        if (kon.getConn() == null) {
             return false;
-        }else{
+        } else {
             Statement stmt = null;
             try {
                 stmt = kon.getConn().createStatement();
                 int tertambah = stmt.executeUpdate("INSERT INTO makanan (nama, stok, supplier) "
-                        + "VALUES('"+makananBaru.getNama()+"','"+makananBaru.getStok()+"'"
-                                + ",'"+makananBaru.getSupplier()+"')");                
+                        + "VALUES('" + makananBaru.getNama() + "','" + makananBaru.getStok() + "'"
+                        + ",'" + makananBaru.getSupplier() + "')");
                 stmt.close();
                 kon.getConn().close();
-                if(tertambah>0){
+                if (tertambah > 0) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             } catch (SQLException ex) {
@@ -97,23 +95,23 @@ public class MakananDao {
             }
         }
     }
-    
-    public boolean edit(String id, makanan makananBaru){
-        if(kon.getConn() == null){
+
+    public boolean edit(String id, makanan makananBaru) {
+        if (kon.getConn() == null) {
             return false;
-        }else{
+        } else {
             Statement stmt = null;
             try {
                 stmt = kon.getConn().createStatement();
                 int terubah = stmt.executeUpdate("UPDATE makanan SET nama = '"
-                        +makananBaru.getNama()+"', stok =  '"
-                        +makananBaru.getStok()+"', supplier =  '"
-                        +makananBaru.getSupplier()+"' WHERE id = '"+id+"'");                
+                        + makananBaru.getNama() + "', stok =  '"
+                        + makananBaru.getStok() + "', supplier =  '"
+                        + makananBaru.getSupplier() + "' WHERE id = '" + id + "'");
                 stmt.close();
                 kon.getConn().close();
-                if(terubah>0){
+                if (terubah > 0) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             } catch (SQLException ex) {
@@ -121,5 +119,5 @@ public class MakananDao {
             }
         }
     }
-    
+
 }
