@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Makanan</title>
     </head>
     <body>
         <h1>Data Gudang Makanan</h1>
@@ -35,12 +35,11 @@
                 <td><%= listMakanan.get(i).getSupplier()%></td>
                 <td>
                     <a href="hapusmakanan?id=<%= listMakanan.get(i).getId()%>">Hapus</a>
-                    <a href="editmakanan?id=<%= listMakanan.get(i).getId()%>">Edit</a>
                 </td>
             </tr>
             <%}%>
 
-            
+
         </table>
     </body>
 </html>

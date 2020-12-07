@@ -5,10 +5,7 @@
  */
 package model;
 
-/**
- *
- * @author USER
- */
+
 public class makanan {
     private int id;
     private String nama;

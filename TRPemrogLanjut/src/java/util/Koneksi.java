@@ -5,10 +5,6 @@
  */
 package util;
 
-/**
- *
- * @author USER
- */
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -16,10 +16,7 @@ import java.util.logging.Logger;
 import model.makanan;
 import util.Koneksi;
 
-/**
- *
- * @author USER
- */
+
 public class MakananDao {
     Koneksi kon = new Koneksi();
 
@@ -79,14 +76,15 @@ public class MakananDao {
     }
     
     public boolean insert(makanan makananBaru){
-        Koneksi kon = new Koneksi();
         if(kon.getConn() == null){
             return false;
         }else{
             Statement stmt = null;
             try {
                 stmt = kon.getConn().createStatement();
-                int tertambah = stmt.executeUpdate("INSERT INTO makanan (nama, stok, supplier) VALUES('"+makananBaru.getNama()+"','"+makananBaru.getStok()+"','"+makananBaru.getSupplier()+"')");                
+                int tertambah = stmt.executeUpdate("INSERT INTO makanan (nama, stok, supplier) "
+                        + "VALUES('"+makananBaru.getNama()+"','"+makananBaru.getStok()+"'"
+                                + ",'"+makananBaru.getSupplier()+"')");                
                 stmt.close();
                 kon.getConn().close();
                 if(tertambah>0){
@@ -101,14 +99,16 @@ public class MakananDao {
     }
     
     public boolean edit(String id, makanan makananBaru){
-        Koneksi kon = new Koneksi();
         if(kon.getConn() == null){
             return false;
         }else{
             Statement stmt = null;
             try {
                 stmt = kon.getConn().createStatement();
-                int terubah = stmt.executeUpdate("UPDATE makanan SET nama = '"+makananBaru.getNama()+"', stok =  '"+makananBaru.getStok()+"', supplier =  '"+makananBaru.getSupplier()+"' WHERE id = '"+id+"'");                
+                int terubah = stmt.executeUpdate("UPDATE makanan SET nama = '"
+                        +makananBaru.getNama()+"', stok =  '"
+                        +makananBaru.getStok()+"', supplier =  '"
+                        +makananBaru.getSupplier()+"' WHERE id = '"+id+"'");                
                 stmt.close();
                 kon.getConn().close();
                 if(terubah>0){
