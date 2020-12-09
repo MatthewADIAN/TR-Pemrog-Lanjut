@@ -1,0 +1,47 @@
+body{
+    background-color: #258ea6;
+}
+h1{
+    font-family: Impact;
+    color: white;
+    font-size: 100px;
+}
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description p{
+    color:#03191E;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+}
+#buttonLogin{
+    border:1px  solid #03191E;
+    background:#03191E;
+    color:#f3eee7;
+}
+table {
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+th {
+    background-color: black;
+    border-top: none;
+}
+    
+td:first-child, th:first-child {
+    border-left: none;
+}
+tr{
+    background-color: #fffbfe;
+}
+

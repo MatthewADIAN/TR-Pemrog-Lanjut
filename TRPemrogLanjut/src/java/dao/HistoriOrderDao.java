@@ -71,4 +71,31 @@ public class HistoriOrderDao {
             }
         }
     }
+
+    public boolean insert(histori_order orderBaru) {
+        if (kon.getConn() == null) {
+            return false;
+        } else {
+            Statement stmt = null;
+            try {
+                stmt = kon.getConn().createStatement();
+                int tertambah = stmt.executeUpdate("INSERT INTO histori_order (vendor, nama_makanan, jumlah) "
+                        + "VALUES('" + orderBaru.getVendor() + "','" + orderBaru.getNama_makanan() + "'"
+                        + ",'" + orderBaru.getJumlah() + "')");
+                stmt.close();
+                kon.getConn().close();
+                if (tertambah > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (SQLException ex) {
+                return false;
+            }
+        }
+    }
+
+    public boolean edit(histori_order order) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
