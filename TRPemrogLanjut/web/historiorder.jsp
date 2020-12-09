@@ -97,6 +97,8 @@
                             </div>
                         </div>
                     </form>
+                    <br><br>
+                    <a class="btn btn-secondary" href="halamanutama.jsp" role="button">Kembali Ke Halaman Utama</a>
                 </div>
                 
                 <div class="col-sm-6">
