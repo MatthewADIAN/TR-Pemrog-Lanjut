@@ -43,11 +43,14 @@ public class editorder extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             if (request.getParameter("id") == null) {
+                System.out.println("gagal a");
                 out.println("gagal");
             } else {
                 if (new HistoriOrderDao().edit(order)) {
+                    System.out.println("aaa");
                     out.println("sukses");
                 } else {
+                    System.out.println("gagal b");
                     out.println("gagal");
                 }
                 out.println("<br><a href='historiorder.jsp'>Ketuk untuk kembali</a>");

@@ -95,7 +95,27 @@ public class HistoriOrderDao {
         }
     }
 
-    public boolean edit(histori_order order) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean edit(histori_order orderBaru) {
+         if (kon.getConn() == null) {
+            return false;
+        } else {
+            Statement stmt = null;
+            try {
+                stmt = kon.getConn().createStatement();
+                int terubah = stmt.executeUpdate("UPDATE histori_order SET vendor = '"
+                        + orderBaru.getVendor()+ "', nama_makanan =  '"
+                        + orderBaru.getNama_makanan() + "', jumlah =  '"
+                        + orderBaru.getJumlah()+ "' WHERE id = '" + orderBaru.getId() + "'");
+                stmt.close();
+                kon.getConn().close();
+                if (terubah > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (SQLException ex) {
+                return false;
+            }
+        }
     }
 }
